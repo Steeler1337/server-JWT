@@ -52,7 +52,7 @@ def log_in(k):
 def unprotected():
     return jsonify({'message' : 'Anyone can view this!'})
 
-@app.route('/protected', methods=['POST'])
+@app.route('/protected', methods=['POST', 'GET'])
 @token_required
 def protected():
     return jsonify({'message' : 'Congrats! Only people with valid token can see it.',
